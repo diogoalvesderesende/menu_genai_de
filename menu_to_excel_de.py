@@ -188,11 +188,11 @@ def main():
         st.markdown(f"""
         <div class="header">
             <img src="data:image/png;base64,{base64.b64encode(open(logo, "rb").read()).decode()}" class="logo">
-            <h1>AI-Menü-Konverter in Excel mit Übersetzungen</h1>
+            <h1>AI-Menü zu Excel mit Übersetzung</h1>
         </div>
         """, unsafe_allow_html=True)
     else:
-        st.title("AI-Menü-Konverter in Excel mit Übersetzungen")
+        st.title("AI-Menü zu Excel mit Übersetzung")
 
 
     st.markdown("<hr style='border:none; height:1px; background-color:#ccc; margin:20px 0;' />", unsafe_allow_html=True)
