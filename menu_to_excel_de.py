@@ -79,7 +79,7 @@ def main():
     col1, col2 = st.columns([0.2, 1])
     with col1:
         if os.path.exists(logo):
-            st.image(logo, use_column_width=True)
+            st.image(logo, use_container_width=True)
     with col2:
         st.title("AI-Menü-Konverter in Excel mit Übersetzungen")
 
