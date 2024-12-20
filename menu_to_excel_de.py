@@ -56,8 +56,18 @@ h1, h2, h3, h4, h5, h6 {{
 .uploadedFileInfo {{
     color: #555 !important;
 }}
+img.logo {{
+    max-height: 50px; /* Matches the title size */
+    margin-right: 10px; /* Spacing between logo and title */
+}}
+.header {{
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between logo and title */
+}}
 </style>
 """, unsafe_allow_html=True)
+
 
 # Set up OpenAI API
 api_key = st.secrets["openai_api"]
@@ -175,13 +185,15 @@ Output in Markdown table format:
 def main():
     logo = "logo.png"  
     if os.path.exists(logo):
-        col1, col2 = st.columns([0.1, 1])
-        with col1:
-            st.image(logo, use_container_width='auto')
-        with col2:
-            st.title("AI-Menü-Konverter in Excel mit Übersetzungen")
+        st.markdown(f"""
+        <div class="header">
+            <img src="data:image/png;base64,{base64.b64encode(open(logo, "rb").read()).decode()}" class="logo">
+            <h1>AI-Menü-Konverter in Excel mit Übersetzungen</h1>
+        </div>
+        """, unsafe_allow_html=True)
     else:
         st.title("AI-Menü-Konverter in Excel mit Übersetzungen")
+
 
     st.markdown("<hr style='border:none; height:1px; background-color:#ccc; margin:20px 0;' />", unsafe_allow_html=True)
 
